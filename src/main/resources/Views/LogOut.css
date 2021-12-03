@@ -1,0 +1,6 @@
+#LogOutButton {
+    -fx-background-image: url("../Images/LogOut.png");
+    -fx-background-size: 50 40;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: left;
+}

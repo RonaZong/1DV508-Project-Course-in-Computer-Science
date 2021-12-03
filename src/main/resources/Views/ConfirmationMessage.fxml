@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="159.0" prefWidth="314.0" style="-fx-padding: 8; -fx-background-color: #ffffff; -fx-background-radius: 10; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ConfirmationMessageController">
+         <children>
+            <TextFlow lineSpacing="1.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0">
+               <children>
+                  <Text fx:id="ConfirmationTitle" fill="DIMGRAY" strokeType="OUTSIDE" strokeWidth="0.0" text="Are you sure you want to delete the event?">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="9.0" />
+               </VBox.margin>
+            </TextFlow>
+            <Label fx:id="OptionalId" text="Optional description" textFill="DIMGRAY">
+               <VBox.margin>
+                  <Insets left="10.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <Button fx:id="ButtonNo" mnemonicParsing="false" onAction="#doNotClose" prefWidth="45.0" style="-fx-background-color: #ff0000;" text="No" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="ButtonYes" mnemonicParsing="false" onAction="#close" style="-fx-background-color: #434fe2;" text="Yes" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="189.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="3.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>

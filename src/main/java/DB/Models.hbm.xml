@@ -1,0 +1,70 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "Models.User" table = "User">
+
+        <meta attribute = "class-description">
+            This class contains the User detail.
+        </meta>
+
+        <id name = "id" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "username" column = "username" type = "string"/>
+        <property name = "fullname" column = "fullname" type = "string"/>
+        <property name = "password" column = "password" type = "string"/>
+        <property name = "passwordHint" column = "passwordHint" type = "string"/>
+        <property name = "image" column = "image" type = "string"/>
+        <property name = "isAdmin" column = "isAdmin" type = "boolean"/>
+
+        <property name="creationDate" column="creationDate" type="java.util.Date"/>
+
+    </class>
+
+    <class name = "Models.Timeline" table = "Timeline">
+
+        <meta attribute = "class-description">
+            This class contains the Timeline detail.
+        </meta>
+
+        <id name = "id" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "title" column = "title" type = "string"/>
+        <property name = "description" column = "description" type = "string"/>
+        <property name = "timeUnit" column = "timeUnit" type = "string"/>
+        <property name = "startDate" column = "startDate" type = "java.util.Date"/>
+        <property name = "endDate" column = "endDate" type = "java.util.Date"/>
+        <property name = "createdBy" column = "createdBy" type = "user_id"/>
+        <property name="creationDate" column="creationDate" type="java.util.Date"/>
+
+    </class>
+
+    <class name = "Models.Event" table = "Event">
+
+        <meta attribute = "class-description">
+            This class contains the Event detail.
+        </meta>
+
+        <id name = "id" type = "int" column = "id">
+            <generator class="native"/>
+        </id>
+
+        <property name = "name" column = "name" type = "string"/>
+        <property name = "description" column = "description" type = "string"/>
+        <property name = "image" column = "image" type = "string"/>
+        <property name = "startDate" column = "startDate" type = "date"/>
+        <property name = "endDate" column = "endDate" type = "date"/>
+        <property name = "start" column = "start" type = "time"/>
+        <property name = "end" column = "end" type = "time"/>
+        <property name = "timeline" column = "timeline" type = "timeline_id"/>
+        <property name = "createdBy" column = "createdBy" type = "user_id"/>
+
+        <property name="creationDate" column="creationDate" type="date"/>
+    </class>
+</hibernate-mapping>

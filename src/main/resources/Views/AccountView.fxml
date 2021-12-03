@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AccountViewController">
+   <children>
+      <StackPane fx:id="LoginBox" prefHeight="650.0" prefWidth="500.0" style="-fx-background-color: #434FE2;">
+         <children>
+            <VBox fx:id="loginVBox" alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="368.0" prefWidth="250.0" StackPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" text="Hi There!" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="UserNameTextField" prefHeight="26.0" prefWidth="167.0" promptText="Insert Username">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <Region prefHeight="10.0" prefWidth="700.0" />
+                  <PasswordField fx:id="UserNamePasswordField" promptText="Insert password">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </PasswordField>
+                  <Region prefHeight="15.0" prefWidth="700.0" />
+                  <Button fx:id="LogInButton" alignment="BASELINE_RIGHT" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#loginPress" style="-fx-background-color: #FFFFFF;" text="Login" textFill="#434fe2">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="15.0" right="15.0" top="4.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+            <Button fx:id="RegisterButton" alignment="BASELINE_RIGHT" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#showRegistrationForm" style="-fx-background-color: #FFFFFF;" text="Register" textFill="#434fe2" StackPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="15.0" right="15.0" top="4.0" />
+               </padding>
+               <StackPane.margin>
+                  <Insets right="170.0" top="136.0" />
+               </StackPane.margin>
+            </Button>
+         </children>
+      </StackPane>
+      <Button fx:id="goBackButton" alignment="BASELINE_RIGHT" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: #FFFFFF;" text="Go Back" textFill="#434fe2">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="15.0" right="15.0" top="4.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets top="600.0" />
+         </opaqueInsets>
+      </Button>
+      <StackPane fx:id="createAccountStackPane" layoutX="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="500.0" visible="false">
+         <children>
+            <VBox fx:id="createAccountVBox" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="500.0">
+               <children>
+                  <Label fx:id="createAccountLabel" alignment="CENTER" prefHeight="140.0" prefWidth="500.0" text="Create Account" textFill="#8a8a8a" VBox.vgrow="NEVER">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="createAccountUsername" alignment="CENTER" promptText="Insert Username" style="-fx-background-radius: 7;" translateX="175.0" />
+                  <TextField fx:id="createAccountFullName" alignment="CENTER" promptText="Insert Full Name" style="-fx-background-radius: 7;" translateX="175.0" translateY="7.0" />
+                  <PasswordField fx:id="createAccountPassword" alignment="CENTER" promptText="Insert Password" style="-fx-background-radius: 7;" translateX="175.0" translateY="15.0" />
+                  <TextField fx:id="createAccountPasswordHint" alignment="CENTER" promptText="Password Hint (optional)" style="-fx-background-radius: 7;" translateX="175.0" translateY="30.0" />
+                  <Label alignment="CENTER" text="Profile image" textFill="#8a8a8a" translateX="100.0" translateY="43.0" />
+                  <HBox fx:id="createAccountHBox" prefHeight="34.0" prefWidth="222.0" translateX="92.0" translateY="50.0">
+                     <children>
+                        <Button fx:id="selectFileButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fileChooser" style="-fx-background-color: #FFFFFF;" text="Select file" textFill="#434fe2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="fileNotSelectedLabel" text="File not selected" textFill="#8a8a8a" translateY="4.0" />
+                     </children>
+                  </HBox>
+                  <ImageView fx:id="imageViewCreateAccount" fitHeight="59.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 7;" translateX="280.0" />
+                  <Button fx:id="buttonCreateAccount" alignment="CENTER" mnemonicParsing="false" onAction="#createAccount" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #434fe2; -fx-background-radius: 40;" text="Create Account" textFill="WHITE" translateX="175.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="backToLoginButton" alignment="CENTER" mnemonicParsing="false" onAction="#showLoginForm" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;" text="Already have an account" textFill="#434fe2" translateX="150.0" translateY="10.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+   <stylesheets>
+      <URL value="@Button.css" />
+   </stylesheets>
+</AnchorPane>
