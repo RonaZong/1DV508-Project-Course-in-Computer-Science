@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="404.0" prefWidth="604.0" style="-fx-background-color: #434fe2;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminPanelPopupController">
+
+    <Button fx:id="adminPanel_loadButton" layoutX="500.0" layoutY="18.0" mnemonicParsing="false" onAction="#showEntries" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;" text="Load" textFill="#434fe2">
+        <padding>
+            <Insets bottom="4.0" left="12.0" right="12.0" top="6.0" />
+        </padding>
+      <font>
+         <Font name="System Bold" size="10.0" />
+      </font>
+    </Button>
+    <Label fx:id="adminPanelLabel" layoutX="221.0" layoutY="11.0" text="Admin Panel" textFill="WHITE">
+      <font>
+         <Font size="30.0" />
+      </font>
+    </Label>
+    <TextField fx:id="adminPanelUsername" alignment="CENTER" layoutX="25.0" layoutY="31.0" promptText="Username" style="-fx-background-radius: 7;" translateX="210.0" translateY="50.0" />
+    <TextField fx:id="adminPanelFullName" alignment="CENTER" layoutX="25.0" layoutY="29.0" promptText="Full Name" style="-fx-background-radius: 7;" translateX="210.0" translateY="90.0" />
+    <TextField fx:id="adminPanelPassword" alignment="CENTER" layoutX="26.0" layoutY="27.0" promptText="Password" style="-fx-background-radius: 7;" translateX="210.0" translateY="130.0" />
+    <TextField fx:id="adminPanelPasswordHint" alignment="CENTER" layoutX="35.0" layoutY="36.0" promptText="Password Hint" style="-fx-background-radius: 7;" translateX="200.0" translateY="160.0" />
+    <Button fx:id="buttonCreateAccount" alignment="CENTER" layoutX="25.0" layoutY="-15.0" mnemonicParsing="false" onAction="#editAccount" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40;" text="Edit Account" textFill="#434fe2" translateX="210.0" translateY="270.0">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+    </Button>
+    <Button fx:id="buttonDeleteAccount" alignment="CENTER" layoutX="35.0" layoutY="5.0" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF#FFFFFF; -fx-background-radius: 40;" text="Delete" textFill="#434fe2" translateX="200.0" translateY="310.0">
+        <font>
+            <Font name="System Bold" size="15.0" />
+        </font>
+    </Button>
+    <CheckBox fx:id="checkBox_isAdmin" layoutX="282.0" layoutY="228.0" mnemonicParsing="false" onAction="#isAdmin" text="Admin" textFill="WHITE" />
+    <ScrollPane hbarPolicy="NEVER" layoutY="50.0" prefHeight="355.0" prefWidth="100.0">
+        <content>
+            <ListView fx:id="admin_listView" prefHeight="353.0" prefWidth="100.0" />
+        </content>
+    </ScrollPane>
+</AnchorPane>
